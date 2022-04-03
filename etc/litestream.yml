@@ -1,9 +1,0 @@
-dbs:
-  - path: /var/lib/ghost/content/data/ghost.db
-    replicas:
-      - type: s3
-        bucket: flyio-ghost
-        path: ghost
-        endpoint: s3.us-west-002.backblazeb2.com
-        region: us-west-002
-        force-path-style: true

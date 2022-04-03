@@ -8,6 +8,9 @@ kill_timeout = 5
 # [build]
 # image = "ghost:4.1.2"
 
+[env]
+FLY_PRIMARY_REGION="ord"
+
 [mount]
 source = "ghost_content"
 destination = "/var/lib/ghost/content"
@@ -23,14 +26,14 @@ destination = "/var/lib/ghost/content"
   [[services.ports]]
     handlers = ["http"]
     port = "80"
+    force_https = true
 
   [[services.ports]]
     handlers = ["tls", "http"]
     port = "443"
 
   [[services.tcp_checks]]
-    grace_period = "1s"
+    grace_period = "15s"
     interval = "15s"
-    port = "8080"
     restart_limit = 6
     timeout = "2s"

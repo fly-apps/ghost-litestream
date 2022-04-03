@@ -1,8 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-# if [ -f /var/lib/ghost/content/data/ghost.db ]; then
-#     chmod -R o+rw /var/lib/ghost/content/data/ghost.db
-# fi
-cd /var/lib/ghost
-
-exec node current/index.js
